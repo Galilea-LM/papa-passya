@@ -39,7 +39,7 @@ to run migrations use the following command:
 
 You should run the tests with the following command:
 ### Unity
-  rails test
+    rails test
 
 ### System
     rails test:system
