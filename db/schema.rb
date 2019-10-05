@@ -50,9 +50,13 @@ ActiveRecord::Schema.define(version: 2019_10_05_001502) do
     t.datetime "date_end", null: false
     t.string "date", null: false
     t.string "description", null: false
+    t.bigint "company_id"
+    t.bigint "space_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_events_on_company_id"
     t.index ["name"], name: "index_events_on_name", unique: true
+    t.index ["space_id"], name: "index_events_on_space_id"
   end
 
   create_table "spaces", force: :cascade do |t|
