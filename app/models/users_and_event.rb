@@ -2,16 +2,16 @@
 
 # == Schema Information
 #
-# Table name: companies
+# Table name: users_and_events
 #
 #  id         :integer          not null, primary key
-#  name       :string           not null
-#  address    :string           not null
+#  user_id    :integer          not null
+#  event_id   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Company < ApplicationRecord
-  has_one_attached :logo
-  has_many :events
+class UsersAndEvent < ApplicationRecord
+  belongs_to :users
+  belongs_to :events
 end
