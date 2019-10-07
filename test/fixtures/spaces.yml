@@ -5,9 +5,3 @@ one:
   address: MyString
   place: MyString
   description: MyString
-
-two:
-  name: MyString
-  address: MyString
-  place: MyString
-  description: MyString

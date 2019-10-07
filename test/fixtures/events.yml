@@ -2,12 +2,7 @@
 
 one:
   name: MyString
-  time_in: 2019-10-04 18:39:51
-  time_out: 2019-10-04 18:39:51
+  date_start: 2019-10-04 18:39:51
+  date_end: 2019-10-04 18:39:51
   date: 2019-10-04 18:39:51
-
-two:
-  name: MyString
-  time_in: 2019-10-04 18:39:51
-  time_out: 2019-10-04 18:39:51
-  date: 2019-10-04 18:39:51
+  description: Ejemplo
