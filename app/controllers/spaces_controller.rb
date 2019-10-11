@@ -2,11 +2,16 @@
 
 class SpacesController < ApplicationController
   before_action :load_resource, except: [:index]
+
+  def index
+    @spaces = Space.all
+  end
+
   def new; end
 
   def create
     if @space.save
-      redirect_to companies_path, notice: 'space was created'
+      redirect_to spaces_path, notice: 'space was created'
     else
       render :new
     end
@@ -22,7 +27,7 @@ class SpacesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     if @space.destroy
       redirect_to spaces_path, notice: 'space was deleted'
     else

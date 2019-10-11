@@ -3,6 +3,13 @@
 class EventsController < ApplicationController
   before_action :load_resource, except: [:index]
 
+  def index
+    @events = Event.all
+    return unless params[:search].present? && params[:search][:search] != ''
+
+    @events = @event.search_by_name(params[:search][:search])
+  end
+
   def new; end
 
   def create
@@ -23,7 +30,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     if @event.destroy
       redirect_to events_path, notice: 'Event wass succesfully deleted'
     else

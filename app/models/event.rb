@@ -21,5 +21,7 @@ class Event < ApplicationRecord
   belongs_to :space
   belongs_to :company
   has_and_belongs_to_many :users
+  include PgSearch
+  pg_search_scope :search_by_name, against: :name
   # has_many :actors, through :company
 end

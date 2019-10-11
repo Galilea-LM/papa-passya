@@ -2,6 +2,9 @@
 
 class CompaniesController < ApplicationController
   before_action :load_resource, except: [:index]
+  def index
+    @companies = Company.all
+  end
 
   def new; end
 
@@ -23,7 +26,7 @@ class CompaniesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     if @company.destroy
       redirect_to companies_path, notice: 'Company was deleted'
     else

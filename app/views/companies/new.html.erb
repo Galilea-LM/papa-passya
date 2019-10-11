@@ -1,17 +1,22 @@
 <div class='container'>
-  <form>
-    <%= simple_form_for(@company, html: { class: 'form-inline' }) do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-      
-      <div class="form-inputs">
-        <%= f.input :name %>
-        <%= f.input :address %>
-      </div>
+  <%= simple_form_for(@company) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :address %>
+    </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, class:"btn btn-primary"%>
+    <div class="input-group mb-3">
+      <div class="custom-file">
+        <%= f.file_field :logo, class:'custom-file-input'%>
+        <%= f.label :logo, class:'custom-file-label' %>
       </div>
-    <% end %>
-  </form>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, class:"btn btn-primary"%>
+    </div>
+  <% end %>
 </div>
