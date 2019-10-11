@@ -11,6 +11,9 @@
 
   <body>
     <%= render 'shared/flash_notification'%>
-    <%= yield %>
+    <%= render 'shared/header'%>
+    <div class='container'>
+      <%= yield %>
+    </div>
   </body>
 </html>
