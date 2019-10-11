@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id          :integer          not null, primary key
+#  name        :string           not null
+#  date_start  :datetime         not null
+#  date_end    :datetime         not null
+#  date        :string           not null
+#  description :string           not null
+#  company_id  :integer
+#  space_id    :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
