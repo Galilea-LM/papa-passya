@@ -2,7 +2,7 @@
 
 # == Schema Information
 #
-# Table name: users_and_events
+# Table name: events_users
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer          not null
@@ -11,7 +11,7 @@
 #  updated_at :datetime         not null
 #
 
-class UsersAndEvent < ApplicationRecord
+class EventsUsers < ApplicationRecord
   belongs_to :users
   belongs_to :events
 end
