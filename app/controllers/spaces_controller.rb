@@ -3,6 +3,10 @@
 class SpacesController < ApplicationController
   before_action :load_resource, except: [:index]
 
+  def show
+    @last_event_on_spaces = Event.search_by_space(@space).last(5)
+  end
+
   def index
     @spaces = Space.all
   end
@@ -45,6 +49,6 @@ class SpacesController < ApplicationController
   end
 
   def params_space
-    params.require(:space).permit(:name, :address, :place, :description)
+    params.require(:space).permit(:name, :address, :place, :description, images: [])
   end
 end

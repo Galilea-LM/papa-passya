@@ -27,6 +27,8 @@ class CompaniesController < ApplicationController
   end
 
   def destroy
+    return unless current_user.role == 'admin'
+
     if @company.destroy
       redirect_to companies_path, notice: 'Company was deleted'
     else
@@ -44,6 +46,6 @@ class CompaniesController < ApplicationController
   end
 
   def params_company
-    params.require(:company).permit(:name, :address)
+    params.require(:company).permit(:name, :address, :image)
   end
 end

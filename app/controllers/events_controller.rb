@@ -48,6 +48,7 @@ class EventsController < ApplicationController
   end
 
   def params_event
-    params.require(:event).permit(:name, :date_start, :date_end, :date, :description)
+    byebug
+    params.require(:event).permit(:name, :date_start, :date_end, :date, :description, :company_id, :space_id, images: [])
   end
 end

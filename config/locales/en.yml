@@ -30,4 +30,27 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  events:
+    show:
+      company_present: "%{company} presenta:"
+      price: "desde $%{price_min} hasta $%{price_max}"
+      tickets: "Comprar Entradas en %{tickets_name}"
+      save_favorites: "Guardar en favoritos"
+      events_relation: "Eventos relacionados"
+  spaces:
+    show:
+      save_favorites: "Guardar en favoritos"
+      events_future: "Eventos proximos en %{space_name}"
+    new:
+      add_space: "Crear nuevo espacio"
+
+
+  footer:
+    name_year: "2019, Papa-passya"
+    terms_conditions: "Terminos y Condiciones"
+    privacity: "Aviso de privacidad"
+    client_to_service: "Servicio al Cliente"
+    phone_client: "312-111-1111"
+    email_client: "servicios@example.com"
+    facebook_client: "face"
+    twitter_client: "twitter"

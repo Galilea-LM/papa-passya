@@ -12,3 +12,53 @@
  *
  */
  @import "bootstrap";
+.header {
+  background: rgba(34, 32, 32, 0.425);
+}
+.head-candy {
+  background: white url(asset_path("banner.png")) repeat-x 0 0;
+  background-size: 1280px 400px;
+  width: 100%;
+  min-height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.button-subscribe {
+  background: rgba(249, 249, 249, 0.192);
+  color: white;
+  margin: 5px;
+}
+
+.footer {
+  width: 100%;
+  font-size: 14px;
+  position: absolute;
+
+  .footer-columns {
+    display: table-footer-group !important;
+  
+    li {
+      list-style: none;
+    }
+  }
+}
+
+.dashboard {
+  margin-top: 10rem !important;
+
+  .information {
+    min-height: 350px;
+  }
+}
+
+.custom-container {
+  margin-top: 8rem;
+  min-height: 26rem;
+}
+
+.flash-container {
+  margin-top: 4rem;
+}

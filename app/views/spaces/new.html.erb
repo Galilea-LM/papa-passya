@@ -1,24 +1,27 @@
-<div class='form-group'>
-  <%= simple_form_for(@space) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  
-    <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :address %>
-      <%= f.input :place %>
-      <%= f.input :description %>
-    </div>
+<div class="container">
+  <h1><%=t('spaces.new.add_space')%></h1>
+  <div class='form-group'>
+    <%= simple_form_for(@space) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     
-    <div class="input-group mb-3">
-      <div class="custom-file">
-        <%= f.file_field :images, multiple: true, class:'custom-file-input'%>
-        <%= f.label :images, class:'custom-file-label' %>
+      <div class="form-inputs">
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :place %>
+        <%= f.input :description %>
       </div>
-    </div>
+      
+      <div class="input-group mb-3">
+        <div class="custom-file">
+          <%= f.file_field :images, multiple: true, class:'custom-file-input'%>
+          <%= f.label :images, class:'custom-file-label' %>
+        </div>
+      </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, class:"btn btn-primary"%>
-    </div>
-  <% end %>
+      <div class="form-actions">
+        <%= f.button :submit, class:"btn btn-primary"%>
+      </div>
+    <% end %>
+  </div>
 </div>

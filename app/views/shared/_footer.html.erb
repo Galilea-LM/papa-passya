@@ -1,0 +1,42 @@
+<nav class="footer navbar navbar-dark bg-dark">
+  <div class="container footer-columns">
+    <div class="row">
+      <div class="col">
+        <p class="text-white">Events</p>
+        <% Event.all.each do |event|%>
+          <li><%= link_to event.name, event_path(event), class: "text-secondary" %></li>
+        <% end %>
+      </div>
+      <div class="col">
+        <p class="text-white">Companies</p>
+        <% Company.all.each do |company|%>
+          <li><%= link_to company.name, company_path(company), class: "text-secondary" %></li>
+        <% end %>
+      </div>
+      <div class="col">
+        <p class="text-white">Spaces</p>
+        <% Space.all.each do |space|%>
+          <li><%= link_to space.name, space_path(space), class: "text-secondary" %></li>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-columns">
+    <div class="row">
+      <div class="col">
+        <p class="text-white"><%= t('footer.name_year')%></p>
+        <%= link_to t('footer.terms_conditions'), '/', class:'text-secondary' %><br>
+        <%= link_to t('footer.privacity'), '/', class:'text-secondary' %>
+      </div>
+      <div class="col">
+        <p class="text-white"><%= t('footer.client_to_service')%></p>
+        <p class="text-white"><%= t('footer.phone_client')%></p>
+        <p class="text-warning"><%= t('footer.email_client')%></p>
+      </div>
+      <div class="col">
+        <%= link_to t('footer.facebook_client'), '/', class:'text-secondary' %><br>
+        <%= link_to t('footer.twitter_client'), '/', class:'text-secondary' %>
+      </div>
+    </div>
+  </div>
+</nav>

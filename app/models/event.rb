@@ -23,5 +23,12 @@ class Event < ApplicationRecord
   has_and_belongs_to_many :users
   include PgSearch
   pg_search_scope :search_by_name, against: :name
+  pg_search_scope :search_by_space, against: :space_id
+  # pg_search_scope :search_by_tag, against: :tags
   # has_many :actors, through :company
 end
+# price_min
+# price_max
+# link to buy
+# buy name
+# tags

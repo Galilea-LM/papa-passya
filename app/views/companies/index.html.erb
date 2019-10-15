@@ -1,30 +1,6 @@
-<div class='container'>
-  <h1>Companies</h1>
-  <div class='table-responsive'>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Address</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @companies.each do |company| %>
-          <tr>
-            <th scope="row"><%=company.id%></th>
-            <td><%=link_to company.name, company_path(company) %></td>
-            <td><%=company.address%></td>
-            <td>
-              <%= link_to 'Show' , company_path(company), class: 'button is-rounded is-link is-outlined' %>
-              <%= link_to 'Delete', company_path(company), method: :delete, class: 'button is-rounded is-outlined is-danger' %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+ <% if current_user.present? && (current_user.role == 'admin' || current_user.role == 'promotor')%>
+    <%= render 'admin_index' %>
+<% else %>
+    <h1>No soy admin</h1>
 
-  <%= link_to 'Add company', new_company_path %>
-</div>
+<% end %>

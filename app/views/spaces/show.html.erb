@@ -1,0 +1,35 @@
+
+  <div class="information bg-warning">
+    <h1><%= @space.name %></h1>
+    <p><%= @space.address %></p>
+    <%= link_to t('spaces.show.save_favorites'), '/' %>
+    <div class="container">
+      <div class="row">
+        <% @space.images.each do |image|%>
+          <div class="col">
+            <%= image_tag url_for(image) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<div class="container">
+  <div class="description">
+    <p><%= @space.description %></p>
+  </div>
+  <div class="container">
+    <h2><%= t('spaces.show.events_future', space_name: @space.name) %></h2>
+    <div class="row">
+      <% @last_event_on_space&.each do |event| %>
+        <div class="col">
+          <div class="container">
+            <%= image_tag event.images.first %>
+            <p><%= event.name %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+</div>

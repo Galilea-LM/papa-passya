@@ -1,32 +1,5 @@
-<div class='container'>
-  <h1>Spaces</h1>
-  <div class='table-responsive'>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Address</th>
-          <th scope="col">Place</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @spaces.each do |space| %>
-          <tr>
-            <th scope="row"><%=space.id%></th>
-            <td><%= link_to space.name, space_path(space)%></td>
-            <td><%=space.address%></td>
-            <td><%=space.place%></td>
-            <td>
-              <%= link_to 'Show' , space_path(space), class: 'button is-rounded is-link is-outlined' %>
-              <%= link_to 'Delete', space_path(space), method: :delete, class: 'button is-rounded is-outlined is-danger' %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-
-  <%= link_to 'Add space', new_space_path %>
-</div>
+<% if current_user.present? && current_user.role != 'user'%>
+  <%= render 'admin_index' %>
+<% else %>
+  <h1>No soy admin</h1>
+<% end %>
