@@ -22,3 +22,12 @@ one:
   date_end: 2019-10-04 18:39:51
   date: 2019-10-04 18:39:51
   description: Ejemplo
+
+event_example:
+  name: event example
+  date_start: 2019-10-04 18:39:51
+  date_end: 2019-10-04 18:39:51
+  date: 2019-10-04 18:39:51
+  description: event example
+  company: company_first
+  space: space_example

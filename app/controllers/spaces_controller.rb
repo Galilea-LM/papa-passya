@@ -2,6 +2,7 @@
 
 class SpacesController < ApplicationController
   before_action :load_resource, except: [:index]
+  before_action :valid_user?, except: %i[index show]
 
   def show
     @last_event_on_spaces = Event.search_by_space(@space).last(5)
@@ -46,6 +47,11 @@ class SpacesController < ApplicationController
     return @space = Space.new(params_space) if params[:space].present?
 
     @space = Space.new
+  end
+
+  def valid_user?
+    redirect_to root_path unless current_user.role == 'admin'
+    true
   end
 
   def params_space

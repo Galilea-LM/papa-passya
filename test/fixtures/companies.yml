@@ -14,3 +14,7 @@
 one:
   name: MyString
   address: MyString
+
+company_first:
+  name: Company Example
+  address: Company Example Address

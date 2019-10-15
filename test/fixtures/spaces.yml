@@ -18,3 +18,9 @@ one:
   address: MyString
   place: MyString
   description: MyString
+
+space_example:
+  name: Spaces example
+  address: MyString
+  place: MyString
+  description: MyString

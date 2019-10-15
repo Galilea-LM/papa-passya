@@ -22,5 +22,20 @@
 
 registered_user:
   email: approve@user.com
+  role: 0
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'Password1') %>
+
+promotor_user:
+  email: promotor@user.com
+  role: 0
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'Password1') %>
+
+basic_user:
+  email: basic@user.com
   role: 1
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'Password1') %>
+
+admin_user:
+  email: admin@user.com
+  role: 2
   encrypted_password: <%= Devise::Encryptor.digest(User, 'Password1') %>

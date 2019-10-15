@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class CompaniesController < ApplicationController
-  before_action :load_resource, except: [:index]
+  before_action :load_resource, except: %i[index]
+  before_action :valid_user?, except: %i[index show]
+
   def index
     @companies = Company.all
   end
@@ -27,8 +29,6 @@ class CompaniesController < ApplicationController
   end
 
   def destroy
-    return unless current_user.role == 'admin'
-
     if @company.destroy
       redirect_to companies_path, notice: 'Company was deleted'
     else
@@ -43,6 +43,11 @@ class CompaniesController < ApplicationController
     return @company = Company.new(params_company) if params[:company].present?
 
     @company = Company.new
+  end
+
+  def valid_user?
+    redirect_to root_path unless current_user.role == 'admin'
+    true
   end
 
   def params_company
