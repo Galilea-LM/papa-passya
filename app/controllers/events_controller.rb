@@ -2,6 +2,7 @@
 
 class EventsController < ApplicationController
   before_action :load_resource, except: [:index]
+  before_action :valid_user?, except: %i[index show]
 
   def index
     @events = Event.all
@@ -47,7 +48,12 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  def valid_user?
+    redirect_to root_path unless current_user.role == 'admin'
+    true
+  end
+
   def params_event
-    params.require(:event).permit(:name, :date_start, :date_end, :date, :description)
+    params.require(:event).permit(:name, :date_start, :date_end, :date, :description, :company_id, :space_id, images: [])
   end
 end

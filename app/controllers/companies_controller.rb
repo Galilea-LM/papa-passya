@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class CompaniesController < ApplicationController
-  before_action :load_resource, except: [:index]
+  before_action :load_resource, except: %i[index]
+  before_action :valid_user?, except: %i[index show]
+
   def index
     @companies = Company.all
   end
@@ -43,7 +45,12 @@ class CompaniesController < ApplicationController
     @company = Company.new
   end
 
+  def valid_user?
+    redirect_to root_path unless current_user.role == 'admin'
+    true
+  end
+
   def params_company
-    params.require(:company).permit(:name, :address)
+    params.require(:company).permit(:name, :address, :image)
   end
 end
