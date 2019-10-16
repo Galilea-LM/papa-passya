@@ -44,6 +44,10 @@ en:
     new:
       add_space: "Crear nuevo espacio"
 
+  companies:
+    show:
+      events_future: "Eventos proximos de la compañia %{company_name}"
+
 
   footer:
     name_year: "2019, Papa-passya"

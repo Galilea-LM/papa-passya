@@ -24,6 +24,7 @@ class Event < ApplicationRecord
   include PgSearch
   pg_search_scope :search_by_name, against: :name
   pg_search_scope :search_by_space, against: :space_id
+  pg_search_scope :search_by_company, against: :company_id
   # pg_search_scope :search_by_tag, against: :tags
   # has_many :actors, through :company
 end

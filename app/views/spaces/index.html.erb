@@ -1,5 +1,16 @@
 <% if current_user.present? && current_user.role != 'user'%>
   <%= render 'admin_index' %>
 <% else %>
-  <h1>No soy admin</h1>
+  <div class="container custom-container">
+    <% @spaces.each do |space|%>
+      <div class="card" style="width: 18rem;">
+        <%= image_tag url_for(space.images.first), class:'card-img-top' %>
+        <div class="card-body">
+          <h5 class="card-title"><%=space.name%></h5>
+          <p class="card-text"><%=space.description%></p>
+          <%= link_to 'Details', space_path(space), class:'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>

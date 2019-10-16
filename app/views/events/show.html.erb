@@ -1,24 +1,29 @@
-<p><%= t('events.show.company_present', company: @event.company.name) %></p>
-<h1><%= @event.name %></h1>
-<p><%= @event.space.name %></p>
-<p><%= @event.date %></p>
-<p><%= t('events.show.price', price_min: 12, price_max: 15) %></p>
-<%= link_to  t('events.show.tickets', tickets_name: 'Boletico'), '/' %>
-<%= link_to t('events.show.save_favorites'), '/' %>
+<div class="bg-warning">
+  <div class="top-information">
+    <p><%= t('events.show.company_present', company: @event.company.name) %></p>
+    <h1><%= @event.name %></h1>
+    <p><%= @event.space.name %></p>
+    <p><%= @event.date %></p>
+    <p><%= t('events.show.price', price_min: 12, price_max: 15) %></p>
+    <%= link_to  t('events.show.tickets', tickets_name: 'Boletico'), '/' %>
+    <%= link_to t('events.show.save_favorites'), '/' %>
+  </div>
+</div>
+
 
 <div class="container">
   <div class="row">
     <div class="col">
-          Add tags
+        Add tags
     </div>
   </div>
   <div class="row">
     <div class="col-6">
         Carrousel?
-      <%= image_tag url_for(@event.space.images.first) %>
+      <%= image_tag url_for(@event.space.images.first), class: 'img-fluid' %>
     </div>
     <div class="col">
-      <%= image_tag url_for(@event.images.first) %>
+      <%= image_tag url_for(@event.images.first), class: 'img-fluid' %>
     </div>
   </div>
   <div class="row">

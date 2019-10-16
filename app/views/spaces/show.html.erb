@@ -1,18 +1,22 @@
-
-  <div class="information bg-warning">
+<div class="bg-warning">
+  <div class="top-information">
     <h1><%= @space.name %></h1>
     <p><%= @space.address %></p>
     <%= link_to t('spaces.show.save_favorites'), '/' %>
-    <div class="container">
-      <div class="row">
-        <% @space.images.each do |image|%>
-          <div class="col">
-            <%= image_tag url_for(image) %>
-          </div>
-        <% end %>
+    <% if @space.images.attached? %>
+      <div class="container">
+        <div class="row">
+          <% @space.images.each do |image|%>
+            <div class="col">
+              <%= image_tag url_for(image), class: "img-fluid" %>
+            </div>
+          <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
+</div>
+
 <div class="container">
   <div class="description">
     <p><%= @space.description %></p>

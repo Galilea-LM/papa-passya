@@ -57,8 +57,16 @@
 .custom-container {
   margin-top: 8rem;
   min-height: 26rem;
+  margin-bottom: 1rem;
+  &.next {
+    margin-top: 0;
+  }
 }
 
 .flash-container {
   margin-top: 4rem;
+}
+
+.top-information {
+  padding-top: 5rem;
 }

@@ -1,5 +1,16 @@
- <% if current_user.present? && current_user.role != 'user'%>
+<% if current_user.present? && current_user.role != 'user'%>
   <%= render 'admin_index' %>
 <% else %>
-  <h1>No soy admin</h1>
+  <div class="container custom-container">
+    <% @events.each do |event|%>
+      <div class="card" style="width: 18rem;">
+        <%= image_tag url_for(event.images.first), class:'card-img-top' if event.images.attached?  %>
+        <div class="card-body">
+          <h5 class="card-title"><%=event.name%></h5>
+          <p class="card-text"><%=event.description%></p>
+          <%= link_to 'Details', event_path(event), class:'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>

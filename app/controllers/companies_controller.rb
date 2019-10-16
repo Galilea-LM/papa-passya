@@ -8,6 +8,10 @@ class CompaniesController < ApplicationController
     @companies = Company.all
   end
 
+  def show
+    @last_event_on_company = Event.search_by_company(@company).last(5)
+  end
+
   def new; end
 
   def create

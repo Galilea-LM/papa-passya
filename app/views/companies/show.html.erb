@@ -1,0 +1,33 @@
+<div class="bg-warning">
+  <div class="top-information">
+    <h1><%= @company.name %></h1>
+    <% if @company.logo.attached? %>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <%= image_tag url_for(@company.logo), class: "img-fluid" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="custom-container next">
+  <p><%= @company.address %></p>
+  <div class="container">
+    <h2><%= t('companies.show.events_future', company_name: @company.name) %></h2>
+    <div class="row">
+      <% @last_event_on_company&.each do |event| %>
+        <div class="col">
+          <div class="container">
+            <%= image_tag event.images.first, class: "img-fluid"%>
+            <p><%= event.name %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+</div>

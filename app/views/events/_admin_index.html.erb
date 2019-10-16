@@ -17,7 +17,7 @@
             <td><%=event.date%></td>
             <td><%=event.description%></td>
             <td>
-              <%= link_to 'Edit' , event_path(event), class: 'button is-rounded is-link is-outlined' %>
+              <%= link_to 'Edit' , edit_event_path(event), class: 'button is-rounded is-link is-outlined' %>
               <%= link_to 'Show' , event_path(event), class: 'button is-rounded is-link is-outlined' unless current_user.role == "admin" %>
               <%= link_to 'Delete', event_path(event), method: :delete, class: 'button is-rounded is-outlined is-danger' if current_user.role == "admin" %>
               <%= link_to 'approve', '/' %>

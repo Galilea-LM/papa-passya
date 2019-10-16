@@ -1,6 +1,16 @@
- <% if current_user.present? && (current_user.role == 'admin' || current_user.role == 'promotor')%>
-    <%= render 'admin_index' %>
+<% if current_user.present? && (current_user.role == 'admin' || current_user.role == 'promotor')%>
+  <%= render 'admin_index' %>
 <% else %>
-    <h1>No soy admin</h1>
-
+  <div class="container custom-container">
+    <% @companies.each do |company|%>
+      <div class="card" style="width: 18rem;">
+        <%= image_tag url_for(company.logo), class:'card-img-top' if company.logo.attached?  %>
+        <div class="card-body">
+          <h5 class="card-title"><%=company.name%></h5>
+          <p class="card-text"><%=company.address%></p>
+          <%= link_to 'Details', company_path(company), class:'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>
