@@ -9,7 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery");
 
-// import SlideCarouselPage from './pages/slide_carousel_page';
+import SlideCarouselPage from './pages/slide_carousel_page';
 import HeaderPage from './pages/header_page';
 import FlashPage from './pages/flash_page';
 
@@ -22,7 +22,7 @@ import FlashPage from './pages/flash_page';
 
     new HeaderPage().listen();
     new FlashPage().listen();
-    // new SlideCarouselPage().listen();
+    new SlideCarouselPage().listen();
 
 
   });

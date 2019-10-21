@@ -1,0 +1,19 @@
+.mobile-searchbar {
+	height: 40px;
+  width: 288px;
+  
+  @media (min-width: 1024px) {
+    width: 577px;
+  }
+}
+
+.mobile-input {
+	height: 40px;
+	width: 288px;
+}
+
+.placeholder {
+	color: $gray;
+  font-size: $third-font-size;
+	line-height: 19px;
+}

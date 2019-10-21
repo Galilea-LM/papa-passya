@@ -1,0 +1,30 @@
+<div id="glide" class="glide slide-cutoff slide-mover">
+  <div class="slide-mover">
+    <div data-glide-el="track" data-glide-el="controls" class="glide__track slide-container nopad">
+      <ul class="glide__slides">
+        <% @slides.each do |slide| %>
+          <% if slide.images.first %>
+            <li class="glide__slide slider__frame">
+              <%= image_tag(slide.images.first.variant(resize_to_limit: [300, 300]))%>
+              <h1><%= slide.name %></h1>
+              <h2><%= slide.date %></h2>
+              <h2><%= slide.description %></h2>
+              <%= link_to 'Ver más...', slide %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div data-glide-el="controls">
+    <a href="#" class="slider__arrow slider__arrow--prev glide__arrow glide__arrow--prev" data-glide-dir="<"><</a>
+    <a href="#" class="slider__arrow slider__arrow--next glide__arrow glide__arrow--next" data-glide-dir=">">></a>
+  </div>
+
+  <div class="slider__bullets glide__bullets" data-glide-el="controls[nav]">
+    <% @slides.count.times do |cont| %>
+      <button class="slider__bullet glide__bullet" data-glide-dir="=<%=cont%>"></button>
+    <% end %>
+  </div>
+</div>

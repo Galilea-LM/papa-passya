@@ -12,18 +12,16 @@
  *
  */
  @import "bootstrap";
-.header {
-  background: rgba(34, 32, 32, 0.425);
-}
-.head-candy {
-  background: white url(asset_path("banner.png")) repeat-x 0 0;
-  background-size: 1280px 400px;
-  width: 100%;
-  min-height: 400px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+ @import '../../../node_modules/@glidejs/glide/src/assets/sass/glide.core';
+ @import '../../../node_modules/@glidejs/glide/src/assets/sass/glide.theme';
+ @import url('https://fonts.googleapis.com/css?family=Barlow&display=swap');
+ 
+ @import 'utils/variables';
+ @import 'components/buttons';
+ @import 'components/inputs';
+
+body {
+  font-family: 'Barlow', sans-serif;
 }
 
 .button-subscribe {
@@ -47,7 +45,8 @@
 }
 
 .dashboard {
-  margin-top: 10rem !important;
+  padding-top: 10rem !important;
+  background: $plum;
 
   .information {
     min-height: 350px;
@@ -69,4 +68,9 @@
 
 .top-information {
   padding-top: 5rem;
+}
+
+.header {
+	height: 80px;
+	background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
 }
